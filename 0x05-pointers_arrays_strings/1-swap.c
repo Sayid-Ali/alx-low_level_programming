@@ -1,4 +1,4 @@
-#include <main.h>
+#include "main.h"
 
 
 /**
@@ -11,7 +11,7 @@ void swap_int(int *a, int *b)
 	int tmp;
 
 	tmp = *a;
-	a = *b;
+	*a = *b;
 	*b = tmp;
 
 }
