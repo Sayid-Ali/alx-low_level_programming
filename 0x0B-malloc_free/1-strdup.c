@@ -3,29 +3,29 @@
 
 
 /**
- * _strdup - create a new array containing a copy of the given string
- * @str: a pointer to the string to copy
+ * _strdup -> string duplicator function
+ * @str: string to be duplicateed
  *
- * Return: NULL if str is NULL or if memory allocation fails,
- * otherwise a return a pointer to the new copy
+ * Return: a string pointer.
  */
-char *_strdup(char *str)
+char *_strdup(char *str);
 {
-	char *dup;
-	unsigned int size = 0;
+	int i = 1, j = 0;
+	char *s;
 
-	if (str)
-	{
-		while (str[size++])
-
-			dup = malloc(sizeof(char) * size);
-		if (dup)
-		{
-			while (size--)
-				dup[size] = str[size];
-
-			return (dup);
-		}
+	if (str == NULL)
+		return (NULL);
+	while str[i]
+		i++;
+	s = (char *)malloc(i * sizeof(char) + 1);
+	if (s == NULL)
+		return (NULL);
+	while (j < i)
+	{	s[j] = str[j];
+		j++;
 	}
-	return (NULL);
+	s[j] = '\0';
+	return (s);
 }
+
+
