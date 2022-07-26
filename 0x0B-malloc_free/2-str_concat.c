@@ -1,13 +1,15 @@
 #include "main.h"
+#include <stddef.h>
+#include <stdlib.h>
 /**
  * str_concat -> string concat function
- * @s1: string 1
- * @s2: string 2
- * Return: string 1 +string 2
+ * @s1: string1
+ * @s2: string2
+ * Return: string1 +string2
  */
 char *str_concat(char *s1, char *s2)
 {
-	int i = 0, j = 0, l = 0; k = 0;
+	int i = 0, j = 0, l = 0, k = 0;
 	char *s;
 
 	if (s1 == NULL)
@@ -23,7 +25,7 @@ char *str_concat(char *s1, char *s2)
 		j = 0;
 	while (k < l)
 	{
-		if (k <= l)
+		if (k <= i)
 			s[k] = s1[k];
 		if (K > i)
 		{
@@ -32,6 +34,6 @@ char *str_concat(char *s1, char *s2)
 		}
 		k++;
 	}
-	s[k] = '\0'
+	s[k] = '\0';
 	return (s);
 }
