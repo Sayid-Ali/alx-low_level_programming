@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stddef.h>
-
+#include <stdlib.h>
 
 
 /**
@@ -16,7 +16,7 @@ char *_strdup(char *str)
 
 	if (str == NULL)
 		return (NULL);
-	while str[i]
+	while (str[i])
 		i++;
 	s = (char *)malloc(i * sizeof(char) + 1);
 	if (s == NULL)
