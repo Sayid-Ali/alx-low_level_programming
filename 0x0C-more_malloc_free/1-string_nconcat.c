@@ -1,6 +1,6 @@
 #include "main.h"
 
-#include <stddef.h>
+#include <stdlib.h>
 
 /**
  * string_nconcat - concatenates 2 strings, takes the first n chars of s2
@@ -12,27 +12,32 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *new_string;
-	int i = 0, j = 0, size_1 = strlen(s1), size_2;
+	unsigned int i, j, k;
+	char *s;
 
-	n < (unsigned int) strlen(s2) ? (size_2 = n) : (size_2 = strlen(s2));
-	new_string = (char *) malloc(size_1 + size_2 + 1);
-	if (new_string != NULL)
-	{
-		for (; i < size_1; i++)
-		{
-			new_string[i] = s1[i];
-		}
-		for (; j < size_2; j++)
-		{
-			new_string[i + j] = s2[j];
-		}
-		new_string[i + j] = '\0';
-	}
+	if (s1 == NULL)
+		i = 0;
 	else
 	{
-		return (NULL);
+		for (i = 0; s1[i]; i++)
+			;
 	}
-
-	return (new_string);
+	if (s2 == NULL)
+		j = 0;
+	else
+	{
+		for (j = 0; s2[j]; j++)
+			;
+	}
+	if (j > n)
+		j = n;
+	s = malloc(sizeof(char) * (i + j + 1));
+	if (s == NULL)
+		return (NULL);
+	for (k = 0; k < i; k++)
+		s[k] = s1[k];
+	for (k = 0; k < j; k++)
+		s[k + i] = s2[k];
+	s[i + j] = '\0';
+	return (s);
 }
