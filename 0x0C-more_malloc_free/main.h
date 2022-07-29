@@ -21,6 +21,9 @@ int len(char *str);
 void *_calloc(unsigned int nmemb, unsigned int size);
 
 int *array_range(int min, int max);
+void errors(void);
+
+int is_digit(char *s);
 
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 
