@@ -1,4 +1,4 @@
-nclude "lists.h"
+#include "lists.h"
 
 
 
@@ -9,7 +9,6 @@ nclude "lists.h"
  *
  * Return: pointer to the indexed node
  */
-
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
 	unsigned int i;
